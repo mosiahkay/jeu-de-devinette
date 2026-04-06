@@ -1,4 +1,5 @@
 import random
+print(f"Devine un nombre entre 1 et 20")
 devinette = (int(random.randint(1,20)))
 tries = 0
 max_tries = 3
