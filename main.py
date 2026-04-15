@@ -55,13 +55,15 @@ def jeux_devinette(max_nombre):
 
 niveau()
 
-print(f"Voulez-vous rejouer? Oui/Non")
+#print(f"Voulez-vous rejouer? Oui/Non")
 
 #answer = input("Votre choix est:")
 
-while answer == True: 
-    niveau()   
+while True: 
+    print(f"Voulez-vous rejouer? Oui/Non")
     answer = input("Votre choix est: ")
-    if answer != "Oui":  
+    niveau()   
+   
+    if answer == "Non":  
         print("Merci d'avoir joué, à bientôt!")
         break
