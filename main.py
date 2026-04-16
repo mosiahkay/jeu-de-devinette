@@ -30,18 +30,19 @@ def jeux_devinette(max_nombre):
     while tries < max_tries:
         number = (int(input("entrez un chiffre: ")))
         again = max_tries - tries - 1
-        if number > devinette:
-            print(f"pas de chance trop grand essaie encore, il vous reste {again} essaie")
-        elif number < devinette:
-            print(f"pas de chance trop petit essaie encore, il vous reste {again} essaie")
+        if number > devinette and tries < max_tries:
+            print(f"pas de chance trop grand essaie encore")
+        elif number < devinette and tries < max_tries:
+            print(f"pas de chance trop petit essaie encore")
         elif number == devinette:
             print(f"you did it cogratulation the number was {devinette}")
             break
         tries += 1
 
-       # while again > 0:
-        #    print(f"il vous reste {again} essais")
-        #    break
+        if again > 0:
+            print(f"il vous reste {again} essais")
+        else:
+            print("Vous n'avez plus d'essais")
         
         if abs(number - devinette) <= 1:
             print("vous etes tres proche")
@@ -61,9 +62,9 @@ niveau()
 
 while True: 
     print(f"Voulez-vous rejouer? Oui/Non")
-    answer = input("Votre choix est: ")
-    niveau()   
+    answer = input("Votre choix est: ")  
    
-    if answer == "Non":  
+    if answer != "Oui":  
         print("Merci d'avoir joué, à bientôt!")
         break
+    niveau()
