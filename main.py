@@ -2,6 +2,8 @@ import random
 
 #devinette = random.randint(1,100)
 
+historique = []
+
 def niveau():
     print(f"Veuillez Choisir le niveau: Facile, Normal, Difficile")
     choix = input("Votre choix est: ").lower()
@@ -28,6 +30,7 @@ def niveau():
 
 
 def jeux_devinette(max_nombre):
+    global historique
     devinette = random.randint(1, max_nombre)
     tries = 0
     max_tries = 3
@@ -65,7 +68,7 @@ def jeux_devinette(max_nombre):
     if tries == max_tries:
             print(f"Oups vous avez perdu, la reponse etait {devinette}")
 
-    historique = []
+
     historique.append(f"Niveau: {max_nombre}, Nombre de tentatives: {tries}, Résultat: {'Victoire' if tries < max_tries else 'Défaite'}")
     print(f"Historique des parties: {historique}")
 
