@@ -39,16 +39,16 @@ def jeux_devinette(max_nombre):
             print("Veuillez entrer un nombre valide.")
             continue
         again = max_tries - tries - 1
-        if number > devinette and tries < max_tries:
+        if number > devinette:
             print(f"pas de chance trop grand essaie encore")
-        elif number < devinette and tries < max_tries:
+        elif number < devinette:
             print(f"pas de chance trop petit essaie encore")
         elif number == devinette:
             print(f"you did it cogratulation the number was {devinette}")
             break
         tries += 1
 
-        while again > 0:
+        if again > 0:
             print(f"il vous reste {again} essais")
         else:
             print("Vous n'avez plus d'essais")
@@ -65,6 +65,11 @@ def jeux_devinette(max_nombre):
     if tries == max_tries:
             print(f"Oups vous avez perdu, la reponse etait {devinette}")
 
+    historique = []
+    historique.append(f"Niveau: {max_nombre}, Nombre de tentatives: {tries}, Résultat: {'Victoire' if tries < max_tries else 'Défaite'}")
+    print(f"Historique des parties: {historique}")
+
+
 niveau()
 
 #print(f"Voulez-vous rejouer? Oui/Non")
@@ -79,3 +84,14 @@ while True:
         print("Merci d'avoir joué, à bientôt!")
         break
     niveau()
+
+    #compteur_parties = 0
+    #compteur_victoires = 0
+
+   # def compte():
+        
+    #def palmares():
+     #   print("Voici votre palmarès de jeu:")
+      #  print(f"Nombre de parties jouées: {parties_jouees}")
+      #  print(f"Nombre de victoires: {victoires}")
+      #  print(f"Nombre de défaites: {defaites}")
